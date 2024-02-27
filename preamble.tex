@@ -141,3 +141,15 @@
 \itshape}
 {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
 \makeatother
+
+% Add syllogism definition
+% Source: https://tex.stackexchange.com/questions/577862
+\newcommand\syllogism[3][]{%
+  \begin{center}
+  \def\tmp{#1}%
+  \ifx\tmp\empty\else(#1)\quad\fi
+  \begin{tabular}{@{}l@{}}
+    #2\\\hline#3\quad$\therefore$
+  \end{tabular}
+  \end{center}
+}
