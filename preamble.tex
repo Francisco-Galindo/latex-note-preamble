@@ -39,7 +39,7 @@
 \declaretheorem[numberwithin=chapter, style=thmbox, name=Definición]{definition}
 \declaretheorem[sibling=definition, style=thmbox, name=Corolario]{corollary}
 \declaretheorem[sibling=definition, style=thmbox, name=Proposición]{prop}
-\declaretheorem[sibling=definition, style=thmbox, name=Teorema]{theorem}
+\declaretheorem[sibling=definition, style=thmbox, name=Teorema]{\protect\thmname}
 \declaretheorem[sibling=definition, style=thmbox, name=Lema]{lemma}
 
 \declaretheorem[numbered=no, style=thmexplanationbox, name=Explicación]{explanation}
@@ -58,6 +58,12 @@
 \newtheorem*{observation}{Observación}
 \newtheorem*{property}{Propiedad}
 
+% \addto\captionsenglish{%
+%   \renewcommand{\thmname}{Theorem}%
+% }
+% \addto\captionsspanish{%
+%   \renewcommand{\thmname}{Teorema}%
+% }
 
 % For code syntax highlighting
 \usepackage{listings}
@@ -91,13 +97,12 @@
 }
 
 \lstdefinestyle{flexokistyle}{
-    backgroundcolor=\color{bgcolor},
     commentstyle=\color{tx2color},
     keywordstyle=\color{recolor},
     numberstyle=\ttfamily\color{txcolor},
     stringstyle=\color{grcolor},
     identifierstyle=\color{cycolor},
-    basicstyle=\ttfamily\footnotesize,
+    basicstyle=\ttfamily\scriptsize,
     breakatwhitespace=false,
     breaklines=true,
     captionpos=b,
@@ -108,6 +113,7 @@
     showstringspaces=false,
     showtabs=false,
     tabsize=4,
+    frame=single,
 }
 \lstset{style=flexokistyle}
 
